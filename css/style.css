@@ -76,7 +76,7 @@ body {
   margin-bottom: 6rem; }
 
 .header {
-  background: linear-gradient(to bottom, rgba(14, 17, 17, 0.2), white), url(../img/hero.png);
+  background: linear-gradient(to bottom, rgba(14, 17, 17, 0.2), white), url(../img/hero.jpg);
   background-size: cover;
   background-position: center;
   height: 100vh;
