@@ -1,0 +1,311 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  box-sizing: border-box;
+  font-family: "lato", sans-serif; }
+
+@keyframes bottomToTop {
+  0% {
+    transform: translateY(4rem);
+    opacity: 0; }
+  80% {
+    transform: translateY(-1rem); }
+  100% {
+    transform: translateY(0);
+    opacity: 1; } }
+
+@keyframes rotateLinkSmall {
+  0% {
+    transform: skewY(0deg); }
+  80% {
+    transform: skewY(4deg); }
+  100% {
+    transform: skewY(3deg) scale(1.2);
+    background: rgba(14, 77, 146, 0.5); } }
+
+.primary-heading {
+  color: #0E4D92;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  letter-spacing: .35rem; }
+  .primary-heading--top {
+    font-size: 6rem;
+    display: inline-block;
+    margin-bottom: 2rem;
+    animation: bottomToTop .5s ease-out;
+    animation-fill-mode: backwards;
+    font-weight: 900; }
+  .primary-heading--bottom {
+    font-size: 2.5rem;
+    display: inline-block;
+    animation: bottomToTop .5s ease-out;
+    animation-fill-mode: backwards;
+    animation-delay: .1s; }
+
+.heading-secondary {
+  font-size: 4rem;
+  color: #0e1111;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  color: #0E4D92; }
+
+.tertiary-heading {
+  font-size: 3rem;
+  color: #0e1111;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  color: #0E4D92; }
+
+.u-text-center {
+  text-align: center; }
+
+.u-mg-b-big {
+  margin-bottom: 6rem; }
+
+.header {
+  background: linear-gradient(to bottom, rgba(14, 17, 17, 0.2), white), url(../img/hero.png);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  position: relative; }
+  .header__logo {
+    position: absolute;
+    top: .6rem;
+    left: 3rem; }
+    .header__logo-img {
+      width: 20rem; }
+
+.row {
+  max-width: 114rem;
+  margin: 0 auto; }
+  .row:after {
+    content: "";
+    display: block;
+    clear: both; }
+  .row:not(:last-child) {
+    margin-bottom: 8rem; }
+  .row [class^="col-"] {
+    float: left; }
+    .row [class^="col-"]:not(:last-child) {
+      margin-right: 4rem; }
+  .row .col-1-of-2 {
+    width: calc((100% - 4rem) / 2); }
+  .row .col-1-of-3 {
+    width: calc((100% - 2 *4rem) / 3); }
+  .row .col-1-of-4 {
+    width: calc((100% - 3 *4rem) / 4); }
+  .row .col-2-of-3 {
+    width: calc(2 * ((100% - 2 *4rem) / 3) + 4rem); }
+  .row .col-2-of-4 {
+    width: calc(2 * ((100% - 3 *4rem) / 4) + 4rem); }
+  .row .col-3-of-4 {
+    width: calc(3 * ((100% - 3 *4rem) / 4) + 2 * 4rem); }
+
+.navbar {
+  position: absolute;
+  right: 3rem;
+  top: 4rem; }
+  .navbar .navigation {
+    list-style: none; }
+    .navbar .navigation:after {
+      content: "";
+      display: block;
+      clear: both; }
+    .navbar .navigation__element {
+      float: left; }
+    .navbar .navigation__link {
+      display: inline-block;
+      text-decoration: none;
+      padding: 2rem;
+      text-transform: uppercase;
+      font-weight: 600;
+      transition: all .4s; }
+      .navbar .navigation__link:link, .navbar .navigation__link:visited {
+        color: #fff;
+        font-size: 4rem; }
+      .navbar .navigation__link:hover {
+        color: #fff;
+        animation: rotateLinkSmall .4s;
+        animation-fill-mode: forwards; }
+
+.btn {
+  display: inline-block;
+  padding: 1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 100px;
+  font-size: 1.5rem;
+  font-weight: 700; }
+  .btn:link, .btn:visited {
+    color: #0E4D92;
+    box-shadow: 0 0.5rem 1rem rgba(14, 17, 17, 0.5); }
+  .btn:hover {
+    box-shadow: 0 0.5rem 1rem rgba(14, 17, 17, 0.5);
+    transform: translateY(-0.5rem); }
+  .btn:active {
+    box-shadow: 0 0.5rem 1rem rgba(14, 17, 17, 0.5);
+    transform: translateY(-0.2rem); }
+  .btn--white {
+    background: #fff;
+    color: #0e1111; }
+
+.subscribe {
+  padding: 6rem; }
+  .subscribe .sub {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 40rem; }
+  .subscribe__form input {
+    padding: 1rem;
+    font-size: 2rem;
+    border: none;
+    border-bottom: 3px solid #008ECC; }
+  .subscribe__form .email:focus {
+    outline: none; }
+  .subscribe__form .submit {
+    background: #008ECC;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700; }
+    .subscribe__form .submit:hover {
+      transform: translateY(-0.2rem);
+      box-shadow: 0rem 0.5rem 2rem rgba(14, 17, 17, 0.5); }
+    .subscribe__form .submit:active {
+      transform: translateY(-0.1rem);
+      box-shadow: 0rem 0.4rem 2rem rgba(14, 17, 17, 0.5); }
+
+.poster {
+  position: relative;
+  height: 40rem; }
+  .poster__mag {
+    width: 33.33%;
+    opacity: 1;
+    position: relative;
+    box-shadow: -2rem 0 0.5rem rgba(14, 17, 17, 0.7); }
+  .poster__image1 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: auto; }
+  .poster__image2 {
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+    opacity: 1;
+    height: 100%;
+    width: auto; }
+  .poster__image3 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: auto; }
+  .poster__mag:hover {
+    opacity: 1;
+    z-index: 2;
+    transform: translateY(-1rem); }
+  .poster:hover .poster__mag:not(:hover) {
+    opacity: 0.8;
+    transform: scale(0.95); }
+
+.card {
+  height: 50rem;
+  position: relative; }
+  .card__side {
+    height: 50rem;
+    box-shadow: 0 2rem 4rem rgba(14, 17, 17, 0.8);
+    transition: all 0.8s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden; }
+    .card__side--font {
+      transform: rotateY(0); }
+    .card__side--back {
+      transform: rotateY(-180deg); }
+      .card__side--back--1 {
+        background: linear-gradient(to right bottom, orange, red); }
+      .card__side--back--2 {
+        background: linear-gradient(to right bottom, rgba(0, 128, 255, 0.8), rgba(14, 77, 146, 0.8)); }
+      .card__side--back--3 {
+        background: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)); }
+  .card:hover .card__side--front {
+    transform: rotateY(180deg); }
+  .card:hover .card__side--back {
+    transform: rotateY(0); }
+  .card__picture {
+    border-radius: 3px; }
+    .card__picture--1 {
+      background: url(../img/berserk.jpeg), linear-gradient(to right bottom, rgba(255, 165, 0, 0.8), rgba(255, 0, 0, 0.8));
+      background-blend-mode: screen;
+      height: 30rem;
+      background-size: cover; }
+    .card__picture--2 {
+      background: url(../img/darker.webp), linear-gradient(to right bottom, rgba(0, 128, 255, 0.8), rgba(14, 77, 146, 0.8));
+      background-blend-mode: screen;
+      height: 30rem;
+      background-size: cover; }
+    .card__picture--3 {
+      background: url(../img/god-of-war.jpg), linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8));
+      background-blend-mode: screen;
+      height: 30rem;
+      background-size: cover; }
+  .card__heading {
+    font-size: 3rem;
+    position: absolute;
+    color: #fff;
+    text-transform: uppercase;
+    top: 25rem;
+    right: 0rem;
+    padding: 1rem; }
+    .card__heading--1 {
+      background: linear-gradient(to right bottom, rgba(255, 165, 0, 0.8), rgba(255, 0, 0, 0.8)); }
+    .card__heading--2 {
+      background: linear-gradient(to right bottom, rgba(0, 128, 255, 0.8), rgba(14, 77, 146, 0.8)); }
+    .card__heading--3 {
+      background: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)); }
+  .card__details {
+    position: relative;
+    height: 20rem;
+    background: white; }
+    .card__details ul {
+      list-style: none;
+      font-size: 2rem;
+      width: 80%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
+      .card__details ul li {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+  .card .cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center; }
+    .card .cta h3 {
+      font-size: 4rem;
+      color: #fff;
+      font-weight: 300; }
+
+.startTour {
+  margin-bottom: 10rem; }
