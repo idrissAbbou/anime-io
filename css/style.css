@@ -77,10 +77,13 @@ body {
   color: #0E4D92; }
 
 .u-text-center {
-  text-align: center; }
+  text-align: center !important; }
 
 .u-mg-b-big {
-  margin-bottom: 6rem; }
+  margin-bottom: 6rem !important; }
+
+.u-mg-b-mid {
+  margin-bottom: 4rem !important; }
 
 .header {
   background: linear-gradient(to bottom, rgba(14, 17, 17, 0.2), white), url(../img/hero.jpg);
@@ -155,7 +158,8 @@ body {
   text-transform: uppercase;
   border-radius: 100px;
   font-size: 1.5rem;
-  font-weight: 700; }
+  font-weight: 700;
+  transition: all .3s; }
   .btn:link, .btn:visited {
     color: #0E4D92;
     box-shadow: 0 0.5rem 1rem rgba(14, 17, 17, 0.5); }
@@ -168,6 +172,9 @@ body {
   .btn--white {
     background: #fff;
     color: #0e1111; }
+  .btn--azure {
+    background: #0080FF;
+    color: #fff; }
 
 .btn-text {
   display: inline-block;
@@ -216,7 +223,7 @@ body {
     width: 33.33%;
     opacity: 1;
     position: relative;
-    box-shadow: -2rem 0 0.5rem rgba(14, 17, 17, 0.7); }
+    box-shadow: 3rem 0rem 2rem rgba(14, 17, 17, 0.3); }
   .poster__image1 {
     position: absolute;
     bottom: 0;
@@ -224,12 +231,14 @@ body {
     height: 100%;
     width: auto; }
   .poster__image2 {
+    z-index: 1;
     position: absolute;
     bottom: 0;
     left: 20%;
     opacity: 1;
     height: 100%;
-    width: auto; }
+    width: auto;
+    transform: scale(1.1) translateY(-1rem); }
   .poster__image3 {
     position: absolute;
     bottom: 0;
@@ -239,7 +248,10 @@ body {
   .poster__mag:hover {
     opacity: 1;
     z-index: 2;
-    transform: translateY(-1rem); }
+    transform: translateY(-1rem) scale(1.1);
+    transition: all .3s; }
+  .poster:first-child:hover + .poster__mag {
+    z-index: 5; }
   .poster:hover .poster__mag:not(:hover) {
     opacity: 0.8;
     transform: scale(0.95); }
@@ -388,12 +400,85 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+  z-index: -1;
   clip-path: polygon(0% 19%, 100% 19%, 100% 88%, 0% 88%); }
   .bg-video__content {
     width: 100%;
     height: 100%;
     object-fit: cover;
     opacity: 0.5; }
+
+.register__group:not(:last-child) {
+  margin-bottom: 3rem;
+  position: relative; }
+
+.register__input {
+  font-family: inherit;
+  width: 80%;
+  padding: 1.5rem 1rem;
+  display: block;
+  border: none;
+  border-bottom: 3px solid transparent; }
+  .register__input:focus {
+    border-bottom: 3px solid #28a745;
+    outline: none; }
+    .register__input:focus:invalid {
+      border-bottom: 3px solid #dc3545; }
+
+.register__label {
+  display: block;
+  margin-left: 1rem;
+  font-size: 1.2rem;
+  color: inherit;
+  transform: translateY(0);
+  transition: all .3s; }
+
+.register__input:placeholder-shown + .register__label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4rem); }
+
+.register__radio-input {
+  display: none; }
+
+.register__radio-group {
+  display: inline-block;
+  width: 49%; }
+
+.register__radio-label {
+  font-size: 1.5rem;
+  color: #0E4D92;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: inherit;
+  position: relative;
+  padding-left: 3rem;
+  cursor: pointer; }
+
+.register__radio-button {
+  display: inline-block;
+  height: 2rem;
+  width: 2rem;
+  border: 3px solid #0E4D92;
+  border-radius: 50%;
+  position: absolute;
+  top: -2px;
+  left: 0; }
+  .register__radio-button::after {
+    content: "";
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    background: #0E4D92;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0; }
+
+.register__radio-input:checked ~ .register__radio-label .register__radio-button::after {
+  opacity: 1; }
 
 .subscribe {
   padding: 6rem; }
@@ -404,3 +489,16 @@ body {
 .news {
   position: relative;
   padding: 6rem; }
+
+.registeration {
+  padding: 6rem;
+  background: linear-gradient(to bottom right, #0080FF, #0E4D92); }
+
+.book {
+  background: linear-gradient(105deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.7) 50%, transparent 50%), url(../img/register.jpg);
+  background-size: cover;
+  background-position: top;
+  border-radius: .5rem; }
+  .book__form {
+    width: 50%;
+    padding: 3rem; }
